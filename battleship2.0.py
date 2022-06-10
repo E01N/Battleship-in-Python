@@ -139,3 +139,44 @@ def create_grid():
     for i in range(len(grid[0])):
         print(str(i), end=" ")
     print("")
+
+def accept_valid_bullet_placement():
+    """will get valid position to place users shot"""
+    global alphabet
+    global grid
+
+    is_valid_placement = False
+    row = -1
+    col = -1
+    while is_valid_placement is False:
+        #user gets prompt to enter area on grid
+        placement = input("Enter row (A-J) and column (0-9) such as B5: ")
+        placement = placement.upper()
+        if len(placement) <= 0 or len(placement) > 2:
+            #if entered incorrectly user will get error message
+            print("Error: Please enter only one row and column such as B5")
+            continue
+        row = placement[0]
+        col = placement[1]
+        if not row.isalpha() or not col.isnumeric():
+            #if entered incorrectly user will get error message
+            print("Error: Please enter letter (A-J) for row and (0-9) for column")
+            continue
+        row = alphabet.find(row)
+        if not (-1 < row < grid_size):
+            #if entered incorrectly user will get error message
+            print("Error: Please enter letter (A-J) for row and (0-9) for column")
+            continue
+        col = int(col)
+        if not (-1 < col < grid_size):
+            #if entered incorrectly user will get error message
+            print("Error: Please enter letter (A-J) for row and (0-9) for column")
+            continue
+        if grid[row][col] == "#" or drid[row][col] == "X":
+            #if user repeates a choice an error message will show
+            print("You have already attacked here")
+            continue
+        if grid[row][col] == "." or grid[row][col] == "0":
+            is_valid_placement = True
+
+    return row, col
