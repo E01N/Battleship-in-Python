@@ -109,3 +109,33 @@ def create_grid():
         ship_size = random.randint(3, 5)
         if try_to_place_ship_on_grid(random_row, random_col, direction, ship_size):
             num_of_ships_placed += 1
+            
+            
+  def print_grid():
+    """will print the grid rows A-J and columns 0-9"""
+    global grid 
+    global alphabet
+
+    #debug_mode is True for testing only
+    debug_mode = True
+
+    alphabet = alphabet[0: len(grid) + 1]
+
+    for row in range(len(grid)):
+        #print out our row A-J
+        print(alphabet[row], end=")")
+        for col in range(len(grid[row])):
+            if grid[row][col] == "0":
+                if debug_mode:
+                    print("0", end=" ")
+                else:
+                    print(".", end=" ")
+            else:
+                print(grid[row][col], end=" ")
+        print("")
+
+    #print our column 0-9
+    print(" ", end=" ")
+    for i in range(len(grid[0])):
+        print(str(i), end=" ")
+    print("")
