@@ -1,5 +1,6 @@
 import random
 import time
+import sys
 
 """
 Legend:
@@ -15,9 +16,9 @@ grid = [[]]
 # global variable for grid size
 grid_size = 10
 # global variable for number of ships 
-num_of_ships = 8
+num_of_ships = 5
 # global variable for bullets left
-bullets_left = 50
+bullets_left = 25
 # game over
 game_over = False
 # global variable for number of ships sunk 
@@ -73,7 +74,7 @@ def try_to_place_ship_on_grid(row, col, direction, length):
             return False
         end_row = row + length
     
-  return validate_grid_and_place_ship(0, 0, 0, 0)
+  return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
 
 
 def create_grid():
@@ -172,7 +173,7 @@ def accept_valid_bullet_placement():
             #if entered incorrectly user will get error message
             print("Error: Please enter letter (A-J) for row and (0-9) for column")
             continue
-        if grid[row][col] == "#" or drid[row][col] == "X":
+        if grid[row][col] == "#" or grid[row][col] == "X":
             #if user repeates a choice an error message will show
             print("You have already attacked here")
             continue
@@ -216,14 +217,14 @@ def shoot_bullet():
         grid[row][col] = "#"
     # ship hit
     elif grid[row][col] == "0":
-        print("Hit", end=" ")
-        grid[roe][col] = "X"
+        print("", end=" ")
+        grid[row][col] = "X"
         #check if ship was sunk
         if check_for_ship_sunk(row, col):
             print("Ship sunk!")
             num_of_ships_sunk += 1
         else:
-            print("Hit")
+            print("You hit a ship")
 
     bullets_left -= 1
 
@@ -242,7 +243,6 @@ def check_for_game_over():
         print("You are out of bullets, you loose")
         game_over = True
 
-
 def main():
     """ main entry of application which runs game loop"""
     global game_over
@@ -260,3 +260,6 @@ def main():
         print("----------------------------------")
         print("")
         check_for_game_over()
+
+if __name__ == '__main__':
+    main()
