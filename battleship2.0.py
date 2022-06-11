@@ -111,7 +111,7 @@ def create_grid():
             num_of_ships_placed += 1
             
             
-  def print_grid():
+def print_grid():
     """will print the grid rows A-J and columns 0-9"""
     global grid 
     global alphabet
@@ -187,7 +187,7 @@ def check_for_ship_sunk(row, col):
     global ship_positions
     global grid
 
-    for position in ship_positions
+    for position in ship_positions:
         start_row = position[0]
         end_row = position[1]
         start_col = position[2]
@@ -222,8 +222,8 @@ def shoot_bullet():
         if check_for_ship_sunk(row, col):
             print("Ship sunk!")
             num_of_ships_sunk += 1
-        else
-        print("Hit")
+        else:
+            print("Hit")
 
     bullets_left -= 1
 
@@ -241,3 +241,22 @@ def check_for_game_over():
     elif bullets_left == 0:
         print("You are out of bullets, you loose")
         game_over = True
+
+
+def main():
+    """ main entry of application which runs game loop"""
+    global game_over
+
+    print("----Welcome to Battleship!----")
+    print(" You have 50 bullets to take down all of the ships")
+
+    create_grid()
+
+    while game_over is False:
+        print_grid()
+        print("Number of ships remaining: " + str(num_of_ships - num_of_ships_sunk))
+        print("Number of bullets remaining: " + str(bullets_left))
+        shoot_bullet()
+        print("----------------------------------")
+        print("")
+        check_for_game_over()
