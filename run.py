@@ -1,6 +1,7 @@
 import random
 import time
 import sys
+import os
 
 """
 Legend:
@@ -16,9 +17,9 @@ grid = [[]]
 # global variable for grid size
 grid_size = 10
 # global variable for number of ships 
-num_of_ships = 5
+num_of_ships = 1
 # global variable for bullets left
-bullets_left = 25
+bullets_left = 50
 # game over
 game_over = False
 # global variable for number of ships sunk 
@@ -78,8 +79,7 @@ def try_to_place_ship_on_grid(row, col, direction, length):
 
 
 def create_grid():
-    """will create 10X10 grid and place ships at random
-       has no return but will run try_to_place_ships_on_grid"""
+    # Will create 10X10 grid and place ships at random
     global grid
     global grid_size
     global num_of_ships
@@ -210,14 +210,13 @@ def shoot_bullet():
 
     row, col = accept_valid_bullet_placement()
     print("")
-    print("--------------------------------")
+    print("----------------------------------")
     # missed shot
     if grid[row][col] == ".":
         print("You missed")
         grid[row][col] = "#"
     # ship hit
     elif grid[row][col] == "0":
-        print("", end=" ")
         grid[row][col] = "X"
         #check if ship was sunk
         if check_for_ship_sunk(row, col):
@@ -258,8 +257,12 @@ def main():
         print("Number of bullets remaining: " + str(bullets_left))
         shoot_bullet()
         print("----------------------------------")
-        print("")
         check_for_game_over()
+
+    while game_over is True:
+        print("----------------------------------")
+        print("Thank you for playing")
+        break
 
 if __name__ == '__main__':
     main()
