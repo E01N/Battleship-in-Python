@@ -51,31 +51,31 @@ def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
 
 
 def try_to_place_ship_on_grid(row, col, direction, length):
-  """based on direction will call on help method to help ship placement"""
-  global grid_size
+    """based on direction will call on help method to help ship placement"""
+    global grid_size
   
-  start_row, end_row, start_col, end_col = row, row + 1, col, col + 1
-  if direction == "left":
+    start_row, end_row, start_col, end_col = row, row + 1, col, col + 1
+    if direction == "left":
         if col - length < 0:
             return False
         start_col = col - length + 1
         
-  elif direction == "right":
+    elif direction == "right":
         if col + length >= grid_size:
             return False
         end_col = col + length
         
-  elif direction == "up":
+    elif direction == "up":
         if row - length < 0:
             return False
         start_row = row - length + 1
 
-  elif direction == "down":
+    elif direction == "down":
         if row + length >= grid_size:
             return False
         end_row = row + length
     
-  return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
+    return validate_grid_and_place_ship(start_row, end_row, start_col, end_col)
 
 
 def create_grid():
@@ -140,6 +140,7 @@ def print_grid():
     for i in range(len(grid[0])):
         print(str(i), end=" ")
     print("")
+
 
 def accept_valid_bullet_placement():
     """will get valid position to place users shot"""
@@ -226,6 +227,7 @@ def shoot_bullet():
             print("You hit a ship")
 
     bullets_left -= 1
+
 
 def check_for_game_over():
     """ if all ships are sunk or if user runs out of bullets it's Game Over"""
