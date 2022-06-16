@@ -4,7 +4,7 @@ Battleship is a Python terminal game, which runs in the Code Institute mock term
 Users have 50 bullets to try and sink 5 ships that are randomly generated on the 10 X 10 grid. Each ship can occupy either 3 or 5 spaces on the grid facing horizonally or vertically.
 
 ## [Here is a live version of my project](https://pp-3-python.herokuapp.com/)
-![Responsive Mockup](media/images/Start.png)
+![Responsive Mockup](media/images/MockUp.png)
 ---
 ## How to play
 This Batlleship game is based on the classic 1930s pen-and-paper game. You can read more about it [here](https://en.wikipedia.org/wiki/Battleship_(game)).
@@ -25,5 +25,30 @@ If the user runs out of bullets they loose.
 
 ## Features
 - __Existing Features__
-  - Random Board Generation.
-  - The user cannot see where the ships are placed on the board.
+  - Random Board Generation
+
+  ![Start](media/images/Start.png)
+  - Accepts user input
+
+  ![Hit](media/images/ShipHit.png)
+  - Keeps count of ships and bullets
+
+  ![Out of Bullets](media/images/OutofBullets.png)
+  - Input validation and error check
+
+  ![Invalid Input](media/images/Incorrect.png)
+  - Win message
+
+  ![Win](media/images/Win.png)
+- __Future Features__
+  - Give the user the option to choose grid size and number of ships
+  - Create another game mode where the user can play against the computer
+  - Give the user the option to play again 
+
+## Testing
+I have manualy tested the project in the following ways:
+  - Passed the code throught PEP8 testing 
+  - Input invalid inputs out of bounds inputs and the same input twice
+  - Tested throught local terminat and Heroku terminal
+
+  ### Bugs
