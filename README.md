@@ -53,14 +53,21 @@ I have manualy tested the project in the following ways:
   - Tested throught local terminat and Heroku terminal
 
   ### Bugs
--__Solved Bugs__
+__Solved Bugs__
   - When writing the project i was having a hard time getting the ships to align with the grid. I fixed this problem by `adding 1` to `start_col` and `start_row`
   - I wasn't getting any ships to show on the grid but i had the value of `validate_grid_and_place_ship` empty and had to input `start_row, end_row, start_col, end_col`
 
--__Remaining Bugs__
+__Remaining Bugs__
   - Sometimes the ships can be placed next to eachother and it can make it confusing as to where the ships start and end
 
   ### Validator
   - [PEP8](http://pep8online.com/checkresult)
 
-  
+  ## Deployment
+  This project was deployed using Code Institute's mock terminal on Heroku
+__Steps for Deployment__
+  - Fork or clone this repository
+  - Create new Heroku app
+  - Set the buildbacks to `Python` and `NodeJS` in that order
+  - Link Heroku and repository together
+  - Click **Deploy**
