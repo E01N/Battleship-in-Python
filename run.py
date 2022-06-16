@@ -12,19 +12,19 @@ Legend:
 
 """
 
-# global variable for grid 
+# grid 
 grid = [[]]
-# global variable for grid size
+# grid size
 grid_size = 10
-# global variable for number of ships 
-num_of_ships = 1
-# global variable for bullets left
+# number of ships 
+num_of_ships = 5
+# bullets left
 bullets_left = 50
 # game over
 game_over = False
-# global variable for number of ships sunk 
+# number of ships sunk 
 num_of_ships_sunk = 0
-# global variable for ship position
+# ship position on grid
 ship_positions = [[]]
 # global variable for alphabet
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -118,7 +118,7 @@ def print_grid():
     global alphabet
 
     #debug_mode is True for testing only
-    debug_mode = True
+    debug_mode = False
 
     alphabet = alphabet[0: len(grid) + 1]
 
