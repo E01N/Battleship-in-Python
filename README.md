@@ -21,7 +21,7 @@ The user has 50 bullets to try and sink all of the 5 ships.
 
 If the user can sink all of the ships in 50 or less attemps they win.
 
-If the user runs out of bullets they loose.
+If the user runs out of bullets they lose.
 
 ## Features
 - __Existing Features__
@@ -71,3 +71,8 @@ __Steps for Deployment__
   - Set the buildbacks to `Python` and `NodeJS` in that order
   - Link Heroku and repository together
   - Click **Deploy**
+
+  ## Credits
+  - Code Institute for the deployment terminal 
+  - StackOverFlow community 
+  - [freeCodeCamp.org](https://www.youtube.com/c/Freecodecamp/playlists) on Youtube for great videos on python 
