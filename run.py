@@ -28,7 +28,7 @@ num_of_ships_sunk = 0
 ship_positions = [[]]
 # global variable for alphabet
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-# Variable for debug mode turn to true to show ships
+# Variable for debug mode turn to True to show ships
 debug_mode = False
 
 def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
