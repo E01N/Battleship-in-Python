@@ -85,12 +85,12 @@ def create_grid():
     global num_of_ships
     global ship_positions
 
-    #if ran multiple times will give different values
+    # if ran multiple times will give different values
     random.seed(time.time())
 
     rows, cols, = (grid_size, grid_size)
 
-    #create 2D arrey
+    # create 2D arrey
     grid = []
     for r in range(rows):
         row = []
@@ -117,13 +117,13 @@ def print_grid():
     global grid 
     global alphabet
 
-    #debug_mode is True for testing only
+    # debug_mode is True for testing only
     debug_mode = False
 
     alphabet = alphabet[0: len(grid) + 1]
 
     for row in range(len(grid)):
-        #print out our row A-J
+        # print out our row A-J
         print(alphabet[row], end=")")
         for col in range(len(grid[row])):
             if grid[row][col] == "0":
@@ -135,7 +135,7 @@ def print_grid():
                 print(grid[row][col], end=" ")
         print("")
 
-    #print our column 0-9
+    # print our column 0-9
     print(" ", end=" ")
     for i in range(len(grid[0])):
         print(str(i), end=" ")
@@ -151,31 +151,31 @@ def accept_valid_bullet_placement():
     row = -1
     col = -1
     while is_valid_placement is False:
-        #user gets prompt to enter area on grid
+        # user gets prompt to enter area on grid
         placement = input("Enter row (A-J) and column (0-9) such as B5: ")
         placement = placement.upper()
         if len(placement) <= 0 or len(placement) > 2:
-            #if entered incorrectly user will get error message
+            # if entered incorrectly user will get error message
             print("Error: Please enter only one row and column such as B5")
             continue
         row = placement[0]
         col = placement[1]
         if not row.isalpha() or not col.isnumeric():
-            #if entered incorrectly user will get error message
+            # if entered incorrectly user will get error message
             print("Error: Please enter letter (A-J) for row and (0-9) for column")
             continue
         row = alphabet.find(row)
         if not (-1 < row < grid_size):
-            #if entered incorrectly user will get error message
+            # if entered incorrectly user will get error message
             print("Error: Please enter letter (A-J) for row and (0-9) for column")
             continue
         col = int(col)
         if not (-1 < col < grid_size):
-            #if entered incorrectly user will get error message
+            # if entered incorrectly user will get error message
             print("Error: Please enter letter (A-J) for row and (0-9) for column")
             continue
         if grid[row][col] == "#" or grid[row][col] == "X":
-            #if user repeates a choice an error message will show
+            # if user repeates a choice an error message will show
             print("You have already attacked here")
             continue
         if grid[row][col] == "." or grid[row][col] == "0":
@@ -219,7 +219,7 @@ def shoot_bullet():
     # ship hit
     elif grid[row][col] == "0":
         grid[row][col] = "X"
-        #check if ship was sunk
+        # check if ship was sunk
         if check_for_ship_sunk(row, col):
             print("Ship sunk!")
             num_of_ships_sunk += 1
@@ -239,10 +239,11 @@ def check_for_game_over():
     if num_of_ships == num_of_ships_sunk:
         print("You Win!")
         game_over = True
-    #if all of the bullets are gone the user looses
+    # if all of the bullets are gone the user looses
     elif bullets_left == 0:
         print("You are out of bullets, you loose")
         game_over = True
+
 
 def main():
     """ main entry of application which runs game loop"""
