@@ -61,8 +61,7 @@ __Remaining Bugs__
   - Sometimes the ships can be placed next to each other and it can make it confusing as to where the ships start and end
 
   ### Validator
-  - I used PEP8 validator to test my code where i got errors such as 'line too long', 'trailing whitespace and 'blank line contains whitespace'
-  ![PEP8Testing](media/images/PEP8Results.png)
+  - I used [PEP8](http://pep8online.com/) validator to test my code which returned no errors
 
   ## Deployment
   This project was deployed using Code Institute's mock terminal on Heroku
