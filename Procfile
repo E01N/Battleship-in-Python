@@ -1,2 +1,2 @@
-web: gunicorn your_app_name:app
+web: gunicorn index.js:app
 
