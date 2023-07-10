@@ -1,2 +1,1 @@
-web: gunicorn run.py:app
-
+web: node index.js
